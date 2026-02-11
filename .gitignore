@@ -9,7 +9,7 @@ venv/
 env/
 
 # Data & Models (Large Files)
-*.pkl
+# *.pkl (Commented out to allow model upload for Render)
 *.csv
 # Keep predictive_maintenance.csv if it's small enough, but usually data is ignored. 
 # However, for this demo project, we might want to keep the CSV if it's < 100MB.
