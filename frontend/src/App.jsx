@@ -18,8 +18,11 @@ import {
     Bot, X, Send
 } from 'lucide-react';
 
-const API_URL = 'http://localhost:8000/predict';
-const HISTORY_URL = 'http://localhost:8000/history';
+// Production API (Render)
+const API_BASE = 'https://sentinel-5aks.onrender.com';
+const API_URL = `${API_BASE}/predict`;
+const HISTORY_URL = `${API_BASE}/history`;
+const CHAT_URL = `${API_BASE}/chat`; // Assuming this was defined or needs to be
 
 // --- Utils ---
 const cToK = (c) => parseFloat(c) + 273.15;
@@ -144,7 +147,7 @@ const SentinelChat = ({ currentStats }) => {
         setLoading(true);
 
         try {
-            const res = await axios.post(`${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/chat`, {
+            const res = await axios.post(CHAT_URL, {
                 message: userMsg,
                 current_stats: currentStats
             });
