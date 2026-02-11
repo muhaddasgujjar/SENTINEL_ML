@@ -70,6 +70,26 @@ npm run dev
 
 ---
 
+## 🚀 Deployment (Live URL)
+
+### Option 1: Render (Recommended for Full Stack)
+1.  Push your code to GitHub.
+2.  Go to [Render.com](https://render.com) and create a **New Web Service**.
+3.  Connect your GitHub repo.
+4.  **Settings**:
+    *   **Runtime**: Python 3
+    *   **Build Command**: `pip install -r requirements.txt`
+    *   **Start Command**: `uvicorn server:app --host 0.0.0.0 --port $PORT`
+    *   **Environment Variables**: Add `GROQ_API_KEY` from your `.env` file.
+5.  Click **Deploy**. Your API will be live!
+
+### Option 2: Vercel (Frontend Only)
+1.  Go to [Vercel.com](https://vercel.com) and import your repo.
+2.  Select `frontend` as the **Root Directory**.
+3.  Click **Deploy**.
+
+---
+
 ## 📂 Project Structure
 
 ```
